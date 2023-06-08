@@ -42,14 +42,13 @@ export const Chat = ({
     };
 
     try {
-      const response = await axios.post(apiURL, postData);
+      await axios.post(apiURL, postData);
       setMessages([
         ...messages,
         { sender: "right", content: message, timestamp: new Date() },
       ]);
 
       setMessage("");
-      console.log(response.data);
     } catch (error) {
       console.error("Error sending message:", error);
     }
@@ -61,7 +60,6 @@ export const Chat = ({
 
       try {
         await axios.delete(deleteUrl);
-        console.log("Notification deleted:", receiptId);
       } catch (error) {
         console.error("Error deleting notification:", error);
       }
