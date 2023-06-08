@@ -48,7 +48,6 @@ export const LoginForm = () => {
   };
 
   const onSubmit: SubmitHandler<IFormInput> = async (data) => {
-    console.log(data);
     const stateInstance = await checkInstance(
       data.idInstance,
       data.apiTokenInstance
